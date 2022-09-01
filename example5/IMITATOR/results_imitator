@@ -1,0 +1,63 @@
+ ***************************************************************
+ *  IMITATOR 3.2 "Cheese Blueberries"                          *
+ *                                                             *
+ *                                       Étienne André et al.  *
+ *                                                2009 - 2022  *
+ *                          LSV, ENS de Cachan & CNRS, France  *
+ *                   LIPN, Université Paris 13 & CNRS, France  *
+ *  Université de Lorraine, CNRS, Inria, LORIA, Nancy, France  *
+ *                                            www.imitator.fr  *
+ *                                                             *
+ *                                         Build: ?????/?????  *
+ *                        Build date: 2022-06-17 13:44:49 UTC  *
+ ***************************************************************
+ This model is a U-PTA.
+ Model: `example5.imi`
+ Algorithm: safety synthesis
+ Merging technique of [AFS13] enabled.
+ Starting running algorithm AG…
+ 
+ Computing post^1 from 1 state.
+ Computing post^2 from 1 state.
+ Computing post^3 from 2 states.
+   [AG] Found a new target state.
+ Computing post^4 from 2 states.
+   [AG] Found a new target state.
+ Computing post^5 from 3 states.
+   [AG] Found a new target state.
+ Computing post^6 from 2 states.
+   [AG] Found a new target state.
+ Computing post^7 from 1 state.
+   [AG] Found a new target state.
+ Computing post^8 from 1 state.
+   [AG] Found a new target state.
+ Computing post^9 from 1 state.
+   [AG] Found a new target state.
+ Computing post^10 from 1 state.
+   [AG] Found a new target state.
+ Computing post^11 from 1 state.
+   [AG] Found a new target state.
+ 
+ Fixpoint reached at a depth of 12: 25 states with 29 transitions in the final state space.
+ 
+   [AG] Algorithm completed after 0.049 second.
+ 
+ Final positive constraint guaranteeing safety:
+  77 >= s + t
+ & s >= 0
+ & t >= 0
+ & u >= 0
+ & v >= 0
+ & w >= 0
+ & y >= 0
+ & z >= 0
+ & 94 >= v
+ & 95 >= u
+ & 77 >= t + z
+ & 77 >= t + y
+ & 77 >= t + w
+ This positive constraint is exact (sound and complete)
+ 
+ Result written to file `example5.res`.
+
+ IMITATOR successfully terminated (after 0.052 second)

@@ -1,0 +1,24 @@
+Calculating the distance...
+d <  100
+d <  50
+d >=  25
+d >=  37
+d <  43
+d >=  40
+d >=  41
+d >=  42
+d >=  42
+
+Distance found: 42 <= d < 43
+
+Result found in 0.616 seconds.
+
+C-non-blocking: True
+
+C-structurely-enabled-edges: True
+
+C-cycle-first: True
+
+Constraint due to the distance: l5 < 84
+
+Global constraint to keep the bounded response property:  l5 < 84

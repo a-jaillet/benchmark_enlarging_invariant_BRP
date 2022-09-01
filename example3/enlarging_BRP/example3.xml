@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<template>
+		<name>Test</name>
+		<parameter>chan &amp;a, chan &amp;b</parameter>
+		<declaration>
+
+// Place local declarations here.
+
+clock x;</declaration>
+		<location id="id0" x="-544" y="-25">
+			<name x="-554" y="-59">l0</name>
+		</location>
+		<location id="id1" x="-408" y="-17">
+			<name x="-418" y="-51">l1</name>
+		</location>
+		<location id="id2" x="-280" y="-17">
+			<name x="-290" y="-51">l2</name>
+			<label kind="invariant" x="-290" y="0">x &lt; 15</label>
+		</location>
+		<location id="id3" x="-144" y="-17">
+			<name x="-154" y="-51">l3</name>
+			<label kind="invariant" x="-154" y="0">x &lt; 15</label>
+		</location>
+		<location id="id4" x="-17" y="-25">
+			<name x="-27" y="-59">l4</name>
+		</location>
+		<location id="id5" x="136" y="-17">
+			<name x="126" y="-51">l5</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<nail x="-25" y="-144"/>
+			<nail x="-170" y="-144"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-126" y="-38">b</label>
+			<label kind="assignment" x="-126" y="-21">x := 0</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id3"/>
+			<label kind="assignment" x="-262" y="-17">x := 0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-390" y="-34">a</label>
+			<label kind="assignment" x="-390" y="-17">x :=0</label>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<nail x="-518" y="-25"/>
+		</transition>
+	</template>
+	<system>
+
+
+chan a, b;
+Test1 = Test(a, b);
+// List one or more processes to be composed into a system.
+system Test1;</system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

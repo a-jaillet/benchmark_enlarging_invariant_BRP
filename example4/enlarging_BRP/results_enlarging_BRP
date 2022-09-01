@@ -1,0 +1,16 @@
+Calculating the distance...
+d >=  100
+
+Distance found: 100000000 <= d < 100000001
+
+Result found in 0.034 seconds.
+
+C-non-blocking: True
+
+C-structurely-enabled-edges: l7 = 0 & name_added0 = 0 & name_added1 = 0
+
+C-cycle-first: True
+
+Constraint due to the distance: True
+
+Global constraint to keep the bounded response property:  l7 = 0 & name_added0 = 0 & name_added1 = 0

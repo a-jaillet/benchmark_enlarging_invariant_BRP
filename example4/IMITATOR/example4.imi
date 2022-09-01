@@ -1,0 +1,83 @@
+(*******************************************************************************
+ *                                IMITATOR MODEL                               
+ * 
+ * Title            : BlT09_fig1
+ * Description      : TODO
+ * Correctness      : infinite run visiting infinitely often location 3
+ * Scalable         : no
+ * Generated        : no
+ * Categories       : Toy
+ * Source           : Laura Bozzelli, Salvatore La Torre: Decision problems for lower/upper bound parametric timed automata. Formal Methods in System Design 35(2): 121-151 (2009), Fig1
+ * bibkey           : BT09
+ * Author           : Laura Bozzelli, Salvatore La Torre
+ * Modeling         : Laura Bozzelli, Salvatore La Torre
+ * Input by         : Étienne André
+ * License          : 
+ * 
+ * Created          : 2015/11/17
+ * Last modified    : 2021/08/30
+ * Model version    : 
+ * 
+ * IMITATOR version : 3.1
+ ******************************************************************************)
+
+var
+
+(* Clocks *)
+ 	x
+		: clock;
+
+(* Parameters *)
+	v, u
+		: parameter;
+
+
+
+(************************************************************)
+  automaton pta
+(************************************************************)
+synclabs: a, b; 
+
+loc l7: invariant True
+
+
+loc l5: invariant x <= v
+	when True sync a goto l4;
+
+loc l4: invariant x <= u
+	when True sync b goto l5;
+
+end (* pta *)
+
+
+
+(************************************************************)
+(* Initial state *)
+(************************************************************)
+
+init := {
+  discrete =
+  	(*------------------------------------------------------------*)
+  	(* Initial location *)
+  	(*------------------------------------------------------------*)
+  	loc[pta] := l7,
+  ;
+
+  continuous =
+  	(*------------------------------------------------------------*)
+  	(* Initial clock constraints *)
+  	(*------------------------------------------------------------*)
+  	& x = 0
+
+  	(*------------------------------------------------------------*)
+  	(* Parameter constraints *)
+  	(*------------------------------------------------------------*)
+  	& v >= 0
+  	& u >= 0
+  ;
+}
+
+(************************************************************)
+(* The end *)
+(************************************************************)
+end

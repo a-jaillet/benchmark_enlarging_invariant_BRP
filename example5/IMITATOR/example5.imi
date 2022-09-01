@@ -1,0 +1,108 @@
+(*******************************************************************************
+ *                                IMITATOR MODEL                               
+ * 
+ * Title            : BlT09_fig1
+ * Description      : TODO
+ * Correctness      : infinite run visiting infinitely often location 3
+ * Scalable         : no
+ * Generated        : no
+ * Categories       : Toy
+ * Source           : Laura Bozzelli, Salvatore La Torre: Decision problems for lower/upper bound parametric timed automata. Formal Methods in System Design 35(2): 121-151 (2009), Fig1
+ * bibkey           : BT09
+ * Author           : Laura Bozzelli, Salvatore La Torre
+ * Modeling         : Laura Bozzelli, Salvatore La Torre
+ * Input by         : Étienne André
+ * License          : 
+ * 
+ * Created          : 2015/11/17
+ * Last modified    : 2021/08/30
+ * Model version    : 
+ * 
+ * IMITATOR version : 3.1
+ ******************************************************************************)
+
+var
+
+(* Clocks *)
+ 	x
+		: clock;
+
+(* Parameters *)
+	s, t, u, v, w, y, z
+		: parameter;
+
+
+
+(************************************************************)
+  automaton pta
+(************************************************************)
+synclabs: a, b; 
+
+loc l5: True
+	when True do {x := 0} goto l6;
+
+loc l6: invariant x <= 10 + t
+	when True sync a goto l7;
+	when True do {x := 0} goto l0;
+
+loc l7: invariant x <= 5 + u
+	when True goto l8;
+
+loc l8: invariant x <= 6 + v
+	when True goto l6;
+
+loc l0: invariant x <= 10 + w
+	when True goto l1;
+
+loc l1: invariant x <= 10 + s
+	when x < 3 do {x := 0} goto l2;
+	when True sync b goto l4;
+
+loc l2: invariant x <= 10 + y
+	when x > 3 goto l3;
+
+loc l3: invariant x <= 10 + z
+	when True goto l0;
+
+loc l4: invariant True
+	when True goto l5;
+
+end (* pta *)
+
+
+
+(************************************************************)
+(* Initial state *)
+(************************************************************)
+
+init := {
+  discrete =
+  	(*------------------------------------------------------------*)
+  	(* Initial location *)
+  	(*------------------------------------------------------------*)
+  	loc[pta] := l5,
+  ;
+
+  continuous =
+  	(*------------------------------------------------------------*)
+  	(* Initial clock constraints *)
+  	(*------------------------------------------------------------*)
+  	& x = 0
+
+  	(*------------------------------------------------------------*)
+  	(* Parameter constraints *)
+  	(*------------------------------------------------------------*)
+  	& t >= 0
+  	& u >= 0
+	& v >= 0
+  	& w >= 0
+	& s >= 0
+  	& y >= 0
+	& z >= 0
+  ;
+}
+
+(************************************************************)
+(* The end *)
+(************************************************************)
+end

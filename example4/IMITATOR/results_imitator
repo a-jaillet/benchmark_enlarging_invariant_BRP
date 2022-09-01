@@ -1,0 +1,33 @@
+ ***************************************************************
+ *  IMITATOR 3.2 "Cheese Blueberries"                          *
+ *                                                             *
+ *                                       Étienne André et al.  *
+ *                                                2009 - 2022  *
+ *                          LSV, ENS de Cachan & CNRS, France  *
+ *                   LIPN, Université Paris 13 & CNRS, France  *
+ *  Université de Lorraine, CNRS, Inria, LORIA, Nancy, France  *
+ *                                            www.imitator.fr  *
+ *                                                             *
+ *                                         Build: ?????/?????  *
+ *                        Build date: 2022-06-17 13:44:49 UTC  *
+ ***************************************************************
+ This model is a U-PTA.
+ Model: `example4.imi`
+ Algorithm: safety synthesis
+ Merging technique of [AFS13] enabled.
+ Starting running algorithm AG…
+ 
+ Computing post^1 from 1 state.
+ 
+ Fixpoint reached at a depth of 2: 1 state with 0 transition in the final state space.
+ 
+   [AG] Algorithm completed after 0.006 second.
+ 
+ Final positive constraint guaranteeing safety:
+  u >= 0
+ & v >= 0
+ This positive constraint is exact (sound and complete)
+ 
+ Result written to file `example4.res`.
+
+ IMITATOR successfully terminated (after 0.007 second)

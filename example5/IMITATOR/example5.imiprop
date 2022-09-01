@@ -1,0 +1,1 @@
+property := #synth pattern(everytime a then eventually b within 100);

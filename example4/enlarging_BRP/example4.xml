@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<template>
+		<name>Test</name>
+		<parameter>chan &amp;a, chan &amp;b</parameter>
+		<declaration>
+
+clock x;</declaration>
+		<location id="id0" x="442" y="255">
+			<name x="432" y="221">l7</name>
+		</location>
+		<location id="id1" x="603" y="306">
+		</location>
+		<location id="id2" x="731" y="306">
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="672" y="327">b</label>
+			<nail x="731" y="314"/>
+			<nail x="654" y="374"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="621" y="255">a</label>
+			<nail x="671" y="238"/>
+		</transition>
+	</template>
+	<system>
+
+chan a, b;
+Test1 = Test(a,b);
+
+system Test1;</system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; Test1.l3</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
